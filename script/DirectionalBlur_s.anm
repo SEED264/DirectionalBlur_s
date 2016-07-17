@@ -1,0 +1,10 @@
+--track0:範囲,0,1000,20,1
+--track1:角度,-3600.0,3600.0,50.0,0.1
+--dialog:境界ミラー/chk,mm=0; 範囲固定/chk,rm=0; 高速化レベル,local sl=2; ダウンサンプリング/chk,local ds=1;
+--check0:Gaussian Mode,0
+local gm = obj.check0 and 1 or 0
+require("DirectionalBlur_s")
+data, w, h = obj.getpixeldata()
+datan, nw, nh = DirectionalBlur_s.DirectionalBlur(data, w, h, obj.track0, obj.track1, ds, sl, gm, rm, mm)
+obj.effect("リサイズ","X",nw,"Y",nh,"ドット数でサイズ指定",1)
+obj.putpixeldata(datan)
