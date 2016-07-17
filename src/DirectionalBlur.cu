@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
@@ -176,7 +176,7 @@ __global__ void b0(unsigned long *data, int w, int h){
 */
 
 int DirectionalBlur_Direct(lua_State *L){
-	// ‰æ‘œƒf[ƒ^A•A‚‚³“™‚Ìƒpƒ‰ƒ[ƒ^‚ğæ“¾
+	// ç”»åƒãƒ‡ãƒ¼ã‚¿ã€å¹…ã€é«˜ã•ç­‰ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’å–å¾—
 //	unsigned long *data = (unsigned long*)lua_touserdata(L, 1);
 //	int w = (int)lua_tonumber(L, 2);
 //	int h = (int)lua_tonumber(L, 3);
@@ -373,12 +373,12 @@ int DirectionalBlur_Direct(lua_State *L){
 		if (rm == 0 && mm == 0){
 			lua_getglobal(L, "obj");
 			lua_getfield(L, -1, "effect");
-			lua_pushstring(L, "ƒŠƒTƒCƒY");
+			lua_pushstring(L, "ãƒªã‚µã‚¤ã‚º");
 			lua_pushstring(L, "X");
 			lua_pushinteger(L, nw);
 			lua_pushstring(L, "Y");
 			lua_pushinteger(L, nh);
-			lua_pushstring(L, "ƒhƒbƒg”‚ÅƒTƒCƒYw’è");
+			lua_pushstring(L, "ãƒ‰ãƒƒãƒˆæ•°ã§ã‚µã‚¤ã‚ºæŒ‡å®š");
 			lua_pushinteger(L, 1);
 			lua_call(L, 7, 0);
 		}
@@ -438,10 +438,10 @@ int DirectionalBlur_Direct(lua_State *L){
 //	lua_pushinteger(L, nw);
 //	lua_pushinteger(L, nh);
 	return 0;
-	// Lua ‘¤‚Å‚Ì–ß‚è’l‚ÌŒÂ”‚ğ•Ô‚·(data ‚¾‚¯‚ğ•Ô‚·‚Ì‚Å 1)
+	// Lua å´ã§ã®æˆ»ã‚Šå€¤ã®å€‹æ•°ã‚’è¿”ã™(data ã ã‘ã‚’è¿”ã™ã®ã§ 1)
 }
 int DirectionalBlur(lua_State *L){
-	// ‰æ‘œƒf[ƒ^A•A‚‚³“™‚Ìƒpƒ‰ƒ[ƒ^‚ğæ“¾
+	// ç”»åƒãƒ‡ãƒ¼ã‚¿ã€å¹…ã€é«˜ã•ç­‰ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’å–å¾—
 	int sl = 2;
 	int gmd = 0;
 	int rm = 0;
@@ -680,7 +680,7 @@ int DirectionalBlur(lua_State *L){
 	lua_pushinteger(L, nw);
 	lua_pushinteger(L, nh);
 	return 3;
-	// Lua ‘¤‚Å‚Ì–ß‚è’l‚ÌŒÂ”‚ğ•Ô‚·(data ‚¾‚¯‚ğ•Ô‚·‚Ì‚Å 1)
+	// Lua å´ã§ã®æˆ»ã‚Šå€¤ã®å€‹æ•°ã‚’è¿”ã™(data ã ã‘ã‚’è¿”ã™ã®ã§ 1)
 }
 
 static luaL_Reg DirectionalBlur_s[] = {
@@ -689,10 +689,10 @@ static luaL_Reg DirectionalBlur_s[] = {
 	{ NULL, NULL }
 };
 /*
-‚±‚±‚Ådll‚ğ’è‹`‚µ‚Ü‚·
-•Ê‚Ì‚à‚Ì‚ğì‚éê‡‚Í
+ã“ã“ã§dllã‚’å®šç¾©ã—ã¾ã™
+åˆ¥ã®ã‚‚ã®ã‚’ä½œã‚‹å ´åˆã¯
 Reverse_s
-‚Ì•”•ª‚ğV‚µ‚¢–¼‘O‚É•Ï‚¦‚Ä‚­‚¾‚³‚¢
+ã®éƒ¨åˆ†ã‚’æ–°ã—ã„åå‰ã«å¤‰ãˆã¦ãã ã•ã„
 */
 extern "C"{
 	__declspec(dllexport) int luaopen_DirectionalBlur_s(lua_State *L) {
